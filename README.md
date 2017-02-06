@@ -1,2 +1,2 @@
 # ArchitectureWEB
-réalisation du projet d'architecture web avec Alexandre Prader
+réalisation du projet d'architecture web avec Alexandre Pradere-Niquet et Elliot Candal.
