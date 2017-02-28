@@ -10,6 +10,12 @@ from django.template import loader
 
 from django.http import Http404
 
+from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.http import *
+from django.views.generic import TemplateView
+from django.conf import settings
+
 def index(request):
     #return HttpResponse("Hello, world. You're at the polls index.")
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -56,3 +62,82 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+class LoginView(TemplateView):
+
+  template_name = 'front/index.html'
+
+  def post(self, request, **kwargs):
+
+    username = request.POST.get('username', False)
+    password = request.POST.get('password', False)
+    user = authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        login(request, user)
+        return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
+
+    return render(request, self.template_name)
+
+
+class LogoutView(TemplateView):
+
+  template_name = 'front/index.html'
+
+  def get(self, request, **kwargs):
+
+    logout(request)
+
+    return render(request, self.template_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
