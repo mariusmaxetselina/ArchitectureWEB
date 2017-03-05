@@ -21,3 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^backoffice/', include('backoffice.urls')),
 ]
+
+

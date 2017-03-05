@@ -90,6 +90,63 @@ class LogoutView(TemplateView):
     return render(request, self.template_name)
 
 
+def connexion(request):
+    if request.method == 'POST':
+        formLogin = loginForm(request.POST)
+        if formLogin.is_valid():
+            user = authenticate(username=request.POST['username'], password=request.POST['password'])
+            if user is not None:
+                login(request, user)
+                return redirect(deconnexion)
+            else:
+                messages.add_message(request, messages.ERROR, "Erreur de mot de passe ou de nom d'utilisateur")
+                return redirect(index)
+    else:
+        formLogin = loginForm()
+    formRegister = registerForm()
+    return render(request, 'polls/index.html', {'formRegister': formRegister, 'formLogin': formLogin})
+
+def deconnexion(request):
+    if request.method == 'POST':
+        logout(request)
+        messages.success(request, "Vous avez été correctement deconnecté! A bientôt ! ")
+        return redirect(index)
+    else:
+        if not request.user.is_authenticated:
+            return redirect(connexion)
+        else:
+            return render(request, 'polls/index.html')
+
+def mdp_oublie(request):
+    if request.method == 'POST':
+        formMdp = mdpForm(request.POST)
+        if formMdp.is_valid():
+            username_u = request.POST['username']
+            email_u = request.POST['email']
+            try:
+                user = User.objects.get(username=username_u, email=email_u)
+            except User.DoesNotExist:
+                messages.add_message(request, messages.ERROR, "Erreur de nom d'utilisateur ou de l'adresse email")
+                return redirect(index)
+            nouveaumotdepasse=''
+            for i in range(10):
+                nouveaumotdepasse += random.choice("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+            user.set_password(nouveaumotdepasse)
+            user.save()
+            send_mail(
+                'texte',
+                'A la suite de votre demande, votre mot de passe a été changé. Utilisez désormais '+ nouveaumotdepasse ,
+                settings.EMAIL_HOST_USER,
+                [email_u], fail_silently=False
+            )
+        else:
+            messages.add_message(request, messages.ERROR, "Erreur de nom d'utilisateur ou de l'adresse email")
+            return redirect(index)
+    messages.success(request, "Votre nouveau mot de passe vous a correctement été envoyé. Vérifiez votre adresse mail!")
+    return redirect(index)
+
+
+
 
 
 
