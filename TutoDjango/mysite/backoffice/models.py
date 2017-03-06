@@ -15,6 +15,10 @@ class ProductItem(models.Model):
     color   = models.CharField(max_length=100)
     product = models.ForeignKey('Product')
     code    = models.IntegerField()
+
+class Profil(models.Model):
+	name = models.CharField(max_length=100)
+	keyword = models.CharField(max_length=100)
     
     def __unicode__(self):
         return "{0} {{1}} [{2}]".format(self.product.name, self.color, self.code)
