@@ -1,0 +1,134 @@
+#header{ 
+	height:20px; 
+	background:#5695c7; 
+}
+
+body
+{
+    background-color: #5695c7 ; // #fefcfe;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+  text-align: center;
+  font-family: Arial;
+}
+
+h2{
+	text-align: center;
+	font-family: Arial;
+}
+
+h3{
+	text-align: center;
+	font-family: Arial;
+}
+nav
+{
+	text-align: center;
+    display: inline-block;
+    width: 100%;
+    background:#cccccc; 
+}
+
+nav ul{
+	display: inline-block;
+	list-style-type: none;
+	margin: 5px;
+	width:500px;
+}
+
+nav li
+{
+    display: inline-block;
+    padding: 5px; 
+}
+
+nav a
+{
+    font-size: 15px;
+    font-family: Arial;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #5695c7;
+    border-bottom: 3px solid #5695c7;
+    width: 100px;
+}
+
+form.connexion{
+	width: 400px;
+	position: absolute;
+	left: 38%;	
+	border: 2px solid;
+	border-radius: 10px;
+	background: #cccccc;
+}
+
+input.inputConnexion{
+	width: 40%;
+	float: right;
+}
+
+.buttonConnexion{
+	margin:20px;
+	width: 150px;
+	height: 30px;
+}
+
+.centrage{
+	text-align: center;
+}
+
+form.rechercher{
+	display: inline-block;
+	float:right;
+	height:30px;
+	margin: 5px;
+	line-height: 30px;
+}
+
+label{
+	display: inline-block;
+	width: 100%;
+	font-family: Arial;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#inscription{
+	color:black;
+	font-size: 12px;
+}
+
+form.inscription{
+	width: 50%;
+	position: relative;
+	left: 25%;
+}
+
+input.inputInscription{
+	width: 70%;
+	float: right;
+}
+
+select.selectedInscription{
+	width: 70%;
+	float: right;
+}
+
+
+.buttonInscription{
+	margin:20px;
+	width: 150px;
+	height: 30px;
+}
+
+a{
+	text-decoration: none;
+}
