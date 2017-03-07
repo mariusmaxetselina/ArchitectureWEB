@@ -2,6 +2,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
 from datetime import datetime
+from django import forms
 
 from django.shortcuts import render
 
@@ -25,7 +26,29 @@ def date_actuelle(request):
     return render(request, 'Enigmes/date.html',locals())
 
 def connexion(request):
-    return render(request, 'Enigmes/connexion.html',locals())
+    if request.method == 'POST':
+        formLogin = loginForm(request.POST)
+        if formLogin.is_valid():
+            user = authenticate(username=request.POST['username'], password=request.POST['password'])
+            if user is not None:
+                login(request, user)
+                return redirect(deconnexion)
+            else:
+                messages.add_message(request, messages.ERROR, "Erreur de mot de passe ou de nom d'utilisateur")
+                return redirect(index)
+    else:
+        formLogin = loginForm()
+    formRegister = registerForm()
+    return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'formLogin': formLogin})
+
+class loginForm(forms.Form):
+    username = forms.CharField(label='Pseudo',min_length=2, max_length=100)
+    password = forms.CharField(label='Password',min_length=6, max_length=100, widget=forms.PasswordInput)
+
+class registerForm(forms.Form):
+    username = forms.CharField(label='Pseudo', min_length=2, max_length=100)
+    email = forms.EmailField(label='Email',min_length=5, max_length=100)
+    password = forms.CharField(label='Password',min_length=6, max_length=100, widget=forms.PasswordInput)
 
 def inscription(request):
     return render(request, 'Enigmes/formulaire.html',locals())
