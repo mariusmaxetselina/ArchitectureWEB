@@ -21,7 +21,7 @@ class Enigmes(models.Model):
 
 class Joueur(models.Model):
 
-    Pseudo = models.CharField(max_length=20)
+    pseudo = models.CharField(max_length=20)
 
     password = models.CharField(max_length=50)
 
