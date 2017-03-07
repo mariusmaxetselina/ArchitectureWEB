@@ -23,11 +23,11 @@ class Joueur(models.Model):
 
     Pseudo = models.CharField(max_length=20)
 
-    mdp = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
 
-    niveau = models.IntegerField()
+    level = models.IntegerField()
 
-    adr = models.EmailField(max_length=40)
+    email = models.EmailField(max_length=40)
 
     master = models.BooleanField()
 
