@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+
+{% block title %}je suis la date{% endblock %}
+
+{% block content %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" />
+        <title>Enigmes - Accueil</title>
+    </head>
+    <div id="header"></div> 
+    <header>
+    </header>
+    <body>
+        <section>
+            <h2>Inscription</h2>
+            <form action="inscription.html" method="post" class="inscription">
+                <label> Nom :<input class="inputInscription" type="text" name="NAME" /></label><br/>
+                <label> Prenom :<input class="inputInscription" type="text" name="FIRST_NAME" /></label><br/>
+                <label> Email :<input class="inputInscription" type="text" name="EMAIL" /></label><br/>
+                <label> Mot de passe :<input class="inputInscription" type="password" name="PASSWORD" /></label><br/>
+                <label> Confirmation :<input class="inputInscription" type="password" name="PASSWORD_CONFIRM" /></label><br/>
+                <div class="centrage">
+                    <input class="buttonInscription" type="submit" name="INSCRIPTION" value="Inscription"/>
+                </div>
+                <br/>
+                Vous êtes déjà inscrit ? Cliquez :
+                <a id ="connexion" href="connexion.html">   ICI </a> 
+            </form>
+        </section>
+    </body>
+</html>
+
+{% endblock %}
