@@ -53,17 +53,39 @@ def deconnexion(request):
             return render(request, 'Enigmes/connexion.html')
 
 class loginForm(forms.Form):
-    username = forms.CharField(label='Pseudo',min_length=2, max_length=100)
-    password = forms.CharField(label='Password',min_length=6, max_length=100, widget=forms.PasswordInput)
+    username = forms.CharField(label='pseudo',min_length=2, max_length=100)
+    password = forms.CharField(label='password',min_length=6, max_length=100, widget=forms.PasswordInput)
 
 class registerForm(forms.Form):
-    username = forms.CharField(label='Pseudo', min_length=2, max_length=100)
+    username = forms.CharField(label='pseudo', min_length=2, max_length=100)
     email = forms.EmailField(label='Email',min_length=5, max_length=100)
-    password = forms.CharField(label='Password',min_length=6, max_length=100, widget=forms.PasswordInput)
+    password = forms.CharField(label='password',min_length=6, max_length=100, widget=forms.PasswordInput)
 
 def inscription(request):
-    return render(request, 'Enigmes/formulaire.html',locals())
+    if request.method == 'POST':
+        form = registerForm(request.POST)
+        if form.is_valid():
+            username_u=request.POST['username']
+            try:
+                user = User.objects.get(username=username_u)
+            except User.DoesNotExist:
+                user = User.objects.create_user(username=request.POST.get('username'), password=request.POST['password'],email=request.POST['email'])
+                user.save()
+                user = authenticate(username=request.POST['username'], password=request.POST['password'])
+                login(request, user)
+                messages.success(request, "Vous êtes à présent inscrit!")
+                return redirect(deconnexion)
+            messages.add_message(request, messages.ERROR, "Erreur ce pseudo correspond déjà à un profil existant!")
+            return redirect(index)
+        else:
+            messages.add_message(request, messages.ERROR, "Erreur formulaire!")
+            return redirect(index)
+    else:
+        form = registerForm()
+    return render(request, 'Enigmes/inscription.html', {'form': form})
 
+#def inscription(request):
+#return render(request, 'Enigmes/formulaire.html',locals())
 
 def addition(request, nombre1, nombre2):    
     total = int(nombre1) + int(nombre2)
