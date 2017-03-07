@@ -41,6 +41,17 @@ def connexion(request):
     formRegister = registerForm()
     return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'formLogin': formLogin})
 
+def deconnexion(request):
+    if request.method == 'POST':
+        logout(request)
+        messages.success(request, "Vous avez été correctement deconnecté! A bientôt ! ")
+        return redirect(index)
+    else:
+        if not request.user.is_authenticated:
+            return redirect(connexion)
+        else:
+            return render(request, 'Enigmes/connexion.html')
+
 class loginForm(forms.Form):
     username = forms.CharField(label='Pseudo',min_length=2, max_length=100)
     password = forms.CharField(label='Password',min_length=6, max_length=100, widget=forms.PasswordInput)
