@@ -1,0 +1,30 @@
+<form method="post" action="traitement.php">
+   
+   <fieldset>
+
+       <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+
+       <label for="nom">Quel est votre nom ?</label>
+
+       <input type="text" name="nom" id="nom" autofocus required/>
+
+       <label for="prenom">Quel est votre prénom ?</label>
+
+       <input type="text" name="prenom" id="prenom" required/>
+
+       <label for="email">Quel est votre e-mail ?</label>
+
+       <input type="email" name="email" id="email" required/>
+
+   </fieldset>
+
+   <p>
+       Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br />
+       <input type="radio" name="age" value="moins15" id="moins15" /> <label for="moins15">Moins de 15 ans</label><br />
+       <input type="radio" name="age" value="medium15-25" id="medium15-25" /> <label for="medium15-25">15-25 ans</label><br />
+       <input type="radio" name="age" value="medium25-40" id="medium25-40" /> <label for="medium25-40">25-40 ans</label><br />
+       <input type="radio" name="age" value="plus40" id="plus40" /> <label for="plus40">Plus de 40 ans ?!</label>
+   </p>
+
+   <input type="submit" value="Envoyer" />
+</form>

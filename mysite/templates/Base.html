@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/media/css/style.css" />
+
+   <title>{% block title %}Enigma{% endblock %}</title>
+
+</head>
+
+<body>
+
+<header>Enigma</header>
+
+    <nav>
+
+       {% block nav %}
+
+       <ul>
+
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/connexion">Connexion</a></li>
+             <li><a href="/inscription">Inscription</a></li>
+            <li><a href="/Enigmes/">Enigmes</a></li>
+            <li><a href="/Enigmes/date">DevinettesDesJoueurs</a></li>
+            
+
+
+       </ul>
+
+       {% endblock %}
+
+   </nav>
+
+   <section id="content">
+
+       {% block content %}{% endblock %}
+
+   </section>
+
+<footer>&copy; Enigma </footer>
+
+</body>
+
+</html>
