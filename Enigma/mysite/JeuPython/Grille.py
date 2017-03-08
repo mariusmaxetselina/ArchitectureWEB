@@ -40,8 +40,8 @@ class Grille:
 	def __str__(self):
 	#redefinition de str()
 		res=""
-		for i in range(self.long()):
-			for j in range(self.larg()):
+		for j in range(self.larg()):	
+			for i in range(self.long()):
 				res+=str(self.damier[i][j])
 			res+="\n"
 		for i in range(self.nbBlocks()):
@@ -50,7 +50,7 @@ class Grille:
 		return res
 	#Accesseurs
 	def get(self,x,y):
-		if(x<0 or x>len(self.long()) or y<0 or y>len(self.larg())):
+		if(x<0 or x>=self.long() or y<0 or y>=self.larg()):
 			return Square(self,x,y)
 		else:
 			return self.damier[x][y]
@@ -70,3 +70,14 @@ class Grille:
 
 grille = Grille(6,6)
 print str(grille)
+
+#grille.getBlock(11).moveNeg()
+#grille.getBlock(11).moveNeg()
+#grille.getBlock(11).moveNeg()
+#grille.getBlock(11).movePos()
+
+grille.getBlock(11).movePos()
+grille.getBlock(11).moveNeg()
+grille.getBlock(11).moveNeg()
+print grille
+

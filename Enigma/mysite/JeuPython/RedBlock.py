@@ -10,22 +10,19 @@ class RedBlock(Block):
 
 
 	def moveNeg(self):
-		if(self.squares[0].isEmpty):
+		if(self.squares[0].squareLeft().isEmpty):
 			for i in range(len(self.squares)):
-				self.squares[i]=self.squares[i].squareLeft
+				self.squares[i]=self.squares[i].squareLeft()
 		
 	def movePos(self):
 		if(self.grille.get(5,2) in self.squares):
 			print("win!")
-		if(self.squares[0].isEmpty):
+		if(self.squares[len(self.squares)-1].squareRight().isEmpty()):
 			for i in range(len(self.squares)):
-				self.squares[i]=self.squares[i].squareRight
+				self.squares[i]=self.squares[i].squareRight()
 
    	def getSquares(self):
    		return self.squares
 
-	def __str__(self):
-		res="\n"
-		for i in range(len(self.squares)):
-			res+=str(self.squares[i])+"\n"
-		return "\nblock : "+res
+   	def getI(self):
+   		return "R"

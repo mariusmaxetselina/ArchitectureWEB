@@ -39,7 +39,6 @@ class Square:
   		if(self.x<0 or self.y<0 or self.x>=self.grille.long() or self.y>=self.grille.larg()):
   			return True
 
-  		self.grille.nbBlocks()
   		for i in range(self.grille.nbBlocks()):
   			if (self in self.grille.getBlock(i).getSquares()):
   				return False
@@ -49,4 +48,10 @@ class Square:
 		if self.isEmpty():
 			return "[ ]" 
 		else:
-			return "[X]"
+
+			res="[X]"
+			for i in range(self.grille.nbBlocks()):
+  				if (self in self.grille.getBlock(i).getSquares()):
+  					res = "["+str(self.grille.getBlock(i).getI())+"]"
+  			return res
+			

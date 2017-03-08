@@ -4,33 +4,42 @@ from Square import Square
 class Block:
 #classe Block : comporte un boolean pour designer s'il est horizontal ou vertical 
 #						les squares qui le composent
+	compteur=0
+
 	def __init__(self,squares,horizontal):
 		self.squares=squares
 		self.horizontal=horizontal
+		self.i=Block.compteur
+		Block.compteur +=1
 
 
 
 	def moveNeg(self):
-		if(horizontal):
-			if(self.squares[0].isEmpty):
+		if(self.horizontal):
+			if(self.squares[0].squareLeft().isEmpty()):
 				for i in range(len(self.squares)):
-					self.squares[i]=self.squares[i].squareLeft
+					self.squares[i]=self.squares[i].squareLeft()
 		else:
-			if(self.squares[0].isEmpty):
+			if(self.squares[0].squareUp().isEmpty()):
 				for i in range(len(self.squares)):
-					self.squares[i]=self.squares[i].squareUp
+					self.squares[i]=self.squares[i].squareUp()
+
 	def movePos(self):
-		if(horizontal):
-			if(self.squares[0].isEmpty):
+		if(self.horizontal):
+			if(self.squares[len(self.squares)-1].squareRight().isEmpty()):
 				for i in range(len(self.squares)):
-					self.squares[i]=self.squares[i].squareRight
+					self.squares[i]=self.squares[i].squareRight()
 		else:
-			if(self.squares[0].isEmpty):
+			if(self.squares[len(self.squares)-1].squareDown().isEmpty()):
 				for i in range(len(self.squares)):
-					self.squares[i]=self.squares[i].squareDown
+					self.squares[i]=self.squares[i].squareDown()
 
    	def getSquares(self):
    		return self.squares
+
+   	def getI(self):
+   		alphabet="abcdefghijklmnopqrstuvwxyz"
+   		return alphabet[self.i]
 
 	def __str__(self):
 		res="\n"
