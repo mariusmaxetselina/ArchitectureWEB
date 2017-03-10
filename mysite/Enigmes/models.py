@@ -19,7 +19,7 @@ class Enigmes(models.Model):
 
         return self.question
 
-class Joueur(models.Model):
+class User(models.Model):
 
     pseudo = models.CharField(max_length=20)
 
