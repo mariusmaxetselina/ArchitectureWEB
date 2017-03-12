@@ -70,6 +70,15 @@ form.accueil{
 	background: #cccccc;
 }
 
+form.inscriptionss{
+	width: 400px;
+	position: absolute;
+	left: 38%;	
+	border: 2px solid;
+	border-radius: 10px;
+	background: #cccccc;
+}
+
 form.connexion{
 	width: 400px;
 	position: absolute;
