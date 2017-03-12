@@ -1,11 +1,11 @@
 #header{ 
 	height:20px; 
-	background:#FCA209; 
+	background:#87591A; 
 }
 
 body
 {
-    background-color: #000000 ; // #fefcfe;
+    background-color: #87591A; // #fefcfe;
     margin: 0;
     padding: 0;
 }
@@ -59,6 +59,15 @@ nav a:hover
     color: #5695c7;
     border-bottom: 3px solid #5695c7;
     width: 100px;
+}
+
+form.accueil{
+	width: 800px;
+	position: absolute;
+	left: 22%;	
+	border: 2px solid;
+	border-radius: 10px;
+	background: #cccccc;
 }
 
 form.connexion{
