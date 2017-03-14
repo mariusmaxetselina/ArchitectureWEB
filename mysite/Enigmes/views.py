@@ -4,6 +4,9 @@ from django.shortcuts import redirect
 from datetime import datetime
 from django import forms
 
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import User
+
 from django.shortcuts import render
 
 def index(request):

@@ -18,21 +18,37 @@
     <header>
     </header>
     <body>
-        <section>
-            <h2>Inscription</h2>
-            <form action="inscription.html" method="post" class="inscription">
-                <label> Pseudo :<input class="inputInscription" type="text" name="NAME" autofocus required/></label><br/>
-                <label> Email :<input class="inputInscription" type="text" name="EMAIL" required/></label><br/>
-                <label> Mot de passe :<input class="inputInscription" type="password" name="PASSWORD" required/></label><br/>
-                <label> Confirmation :<input class="inputInscription" type="password" name="PASSWORD_CONFIRM" required/></label><br/>
-                <div class="centrage">
-                    <input class="buttonInscription" type="submit" name="INSCRIPTION" value="Inscription"/>
-                </div>
-                <br/>
-                Vous êtes déjà inscrit ? Cliquez :
-                <a id ="connexion" href="connexion.html">   ICI </a> 
-            </form>
-        </section>
+        <center>
+            <section >
+                <form  class="inscriptionss" method="post" action="connexion" >
+                    <fieldset>
+                        <legend> S'inscrire </legend>
+                            <label for="pseudo">Votre pseudo :</label>
+                            <input type="text" name="pseudo" placeholder="Utilisateur" id="pseudo" autofocus required/> 
+                            <br/>
+                            <label> Email :</label>
+                            <input type="text" name="EMAIL" placeholder="exemple@mail.com" required/>
+                            <br/>
+                            <label for="prenom">Mot de passe :</label>
+                            <input type="password" name="Mot de passe"  placeholder="********" required />
+                            <br/>
+                            <label for="prenom">Confirmation :</label>
+                            <input type="password" name="PASSWORD_CONFIRM"  placeholder="********" required />
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="centrage">
+                                <input class="buttonInscription" type="submit" name="INSCRIPTION" value="Inscription"/>
+                            </div>
+                            <br/>
+                            <br/>
+                            Vous êtes déjà inscrit ? Cliquez :
+                            <a id ="connexion" href="connexion.html">   ICI </a> 
+                    </fieldset>
+                </section>   
+                </form>
+            </section>
+        <center>
     </body>
 </html>
 
