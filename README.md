@@ -35,5 +35,5 @@ Site en cours de développement.
 
 * Base de données
 	* des comptes admin ont été créés
-	* seul X compte utilisateurs ont été créés
-	* seulement quelques enigmes ont été 
+	* seulement X comptes utilisateurs ont été créés
+	* seulement quelques enigmes ont été rentrées dans la base de données
