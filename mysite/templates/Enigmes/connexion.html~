@@ -1,6 +1,6 @@
 {% extends "Base.html" %}
 
-{% block title %}connexion{% endblock %}
+{% block title %}je suis la date{% endblock %}
 
 {% block content %}
 <html>

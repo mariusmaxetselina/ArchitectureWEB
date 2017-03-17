@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 class Enigmes(models.Model):
-	
+
     question = models.CharField(max_length=1000)
 
     reponse = models.CharField(max_length=50)
@@ -15,7 +15,7 @@ class Enigmes(models.Model):
     auteur = models.CharField(max_length=20)
     
 
-    def retQ(self):
+    def __str__(self):
 
         return self.question
 
