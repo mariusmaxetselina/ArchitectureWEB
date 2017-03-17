@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Enigmes
-
+from .models import Joueur
 
 
 
@@ -19,3 +19,4 @@ class EnigmesAdmin(admin.ModelAdmin):
    search_fields  = ('question', 'numero')
 
 admin.site.register(Enigmes,EnigmesAdmin)
+admin.site.register(Joueur)
