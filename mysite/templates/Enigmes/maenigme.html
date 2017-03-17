@@ -4,10 +4,30 @@
 
 {% block content %}
 
-   
-  
-    	<center> <h2> {{ question.question }}</h2>
 
+    <body>
+    	<center>
+			<section >
+				<form  class="connexion" method="post"  >
+				{{ form.as_p }}
+				{% csrf_token %}
+					<fieldset>
+						<legend>  Devinette n° {{question.numero}}</legend>
+						<h2> {{ question.question }} </h2>
+						<label for="pseudo">Votre réponse :</label>
+                    	<input type="text" name="reponse" autofocus required/> 
+                        <br/>
+                        <br/>
+                        <div class="centrage">
+                            <input class="buttonInscription" type="submit" name="Valider" value="Valider"/>
+                        </div>                     
+                </fieldset>
+					</fieldset>
+				</section>   
+				</form>
+			</section>
+		<center>
+    </body>
 
     
 

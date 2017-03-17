@@ -20,7 +20,8 @@
     <body>
         <center>
             <section >
-                <form  class="inscriptionss" method="post" action="connexion" >
+                <form  class="inscriptionss" method="post" >
+                {% csrf_token %}
                     <fieldset>
                         <legend> S'inscrire </legend>
                             <label for="pseudo">Votre pseudo :</label>

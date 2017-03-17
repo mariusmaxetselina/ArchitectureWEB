@@ -17,7 +17,9 @@
     <body>
     	<center>
 			<section >
-				<form  class="connexion" method="post" action="connexion" >
+				<form  class="connexion" method="post"  >
+				{{ form.as_p }}
+				{% csrf_token %}
 					<fieldset>
 						<legend> Se connecter </legend>
 							<label for="pseudo">Votre pseudo :</label>
