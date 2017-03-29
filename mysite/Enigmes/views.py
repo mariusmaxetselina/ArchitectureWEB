@@ -6,6 +6,7 @@ from django import forms
 
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 from django.shortcuts import render
 from .forms import RegisterForm
@@ -56,13 +57,13 @@ def inscription(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            username_u=request.POST['username']
+            username_u=request.POST.get('username')
             try:
                 user = User.objects.get(username=username_u)
             except User.DoesNotExist:
                 user = User.objects.create_user(username=request.POST.get('username'), password=request.POST['password'],email=request.POST['email'])
                 user.save()
-                user = authenticate(username=request.POST['username'], password=request.POST['password'])
+                user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
                 login(request, user)
                 messages.success(request, "Vous êtes à présent inscrit!")
                 return redirect(deconnexion)

@@ -8,7 +8,7 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(forms.Form):
-	pseudo = forms.CharField(required = True, label="", help_text="", max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+	username = forms.CharField(required = True, label="", help_text="", max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
 	password = forms.CharField(required = True, label="", help_text="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
-	password_verif =forms.CharField(required = True, label="", help_text="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+	password_verif =forms.CharField(required = True, label="", help_text="", widget=forms.PasswordInput(attrs={'placeholder': 'Password again'}))
 	email = forms.EmailField(required = True, label="", help_text="", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
