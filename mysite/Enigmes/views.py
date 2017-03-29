@@ -30,28 +30,29 @@ def connexion(request):
     if request.method == 'POST':
         formLogin = LoginForm(request.POST)
         if formLogin.is_valid():
-            user = authenticate(username=request.POST['username'], password=request.POST['password'])
+            user = authenticate(username=request.POST('username'), password=request.POST('password'))
             if user is not None:
                 login(request, user)
                 return redirect(deconnexion)
             else:
-                messages.add_message(request, messages.ERROR, "Erreur de mot de passe ou de nom d'utilisateur")
                 return redirect(index)
     else:
         formLogin = LoginForm()
     formRegister = RegisterForm()
     return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'formLogin': formLogin})
 
+
 def deconnexion(request):
     if request.method == 'POST':
-        logout(request)
-        messages.success(request, "Vous avez été correctement deconnecté! A bientôt ! ")
+        logout(request.POST)
         return redirect(index)
     else:
-        if not request.user.is_authenticated:
-            return redirect(connexion)
-        else:
-            return render(request, 'Enigmes/connexion.html')
+        return redirect(connexion)
+
+
+def erreur(request,name):
+    return render(request, 'Enigmes/maenigme.html', {'question': name})
+
 
 def inscription(request):
     if request.method == 'POST':
@@ -65,13 +66,11 @@ def inscription(request):
                 user.save()
                 user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
                 login(request, user)
-                messages.success(request, "Vous êtes à présent inscrit!")
-                return redirect(deconnexion)
-            messages.add_message(request, messages.ERROR, "Erreur ce pseudo correspond déjà à un profil existant!")
-            return redirect(index)
+                return redirect(index)
+            return HttpResponse("Vous existez deja petit bigorneau!")
+            
         else:
-            messages.add_message(request, messages.ERROR, "Erreur formulaire!")
-            return redirect(index)
+            return HttpResponse("erreur formulaire invalide")
     else:
         form = RegisterForm()
     return render(request, 'Enigmes/inscription.html', {'form': form})

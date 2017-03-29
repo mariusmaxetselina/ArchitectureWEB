@@ -1,0 +1,14 @@
+def connexion(request):
+    if request.method == 'POST':
+        formLogin = LoginForm(request.POST)
+        if formLogin.is_valid():
+            user = authenticate(username=request.POST('username'), password=request.POST('password'))
+            if user is not None:
+                login(request, user)
+                return redirect(deconnexion)
+            else:
+                return redirect(index)
+    else:
+        formLogin = LoginForm()
+    formRegister = RegisterForm()
+    return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'formLogin': formLogin})

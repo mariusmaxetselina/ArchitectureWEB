@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^Enigmes', views.jouer),
     url(r'^inscription', views.inscription, name='inscription'),
     url(r'^devinette/(?P<titreQ>[0-9]+)/$', views.list_enigmes),
+    url(r'^deconnexion', views.deconnexion),
 ]
 """pour articleS, ici c'est la création de variables et leur nombre de
  digit qui est important"""
