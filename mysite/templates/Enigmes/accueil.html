@@ -15,7 +15,8 @@
     					</p> 
     					{% if user.is_authenticated %}
                             Vous êtes connecté, {{ user.username }}
-                            <a href="/deconnexion">Déconnexion</a>
+                            <br/>
+                            <a href="/deconnexion"> Déconnexion</a>
 
                         {%else%}
                             <li><a href="/connexion">Connexion</a></li>
