@@ -1,52 +1,13 @@
+{% extends "../Base.html" %}
 <!DOCTYPE html>
-
 <html lang="fr">
-
-<head>
-
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="static/style.css" />
-  <title>Enigmes - Accueil</title>
-
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="/static/style.css" />
-
-   <title>{% block title %}Enigma{% endblock %}</title>
-
-</head>
-
-<body>
-
-<header>Enigma</header>
-
-    <nav>
-
-       {% block nav %}
-
-       <ul>
-       		<center>
-            <li><a href="/Accueil">Accueil</a></li>
-            <li><a href="/connexion">Connexion</a></li>
-             <li><a href="/inscription">Inscription</a></li>
-            <li><a href="/Enigmes/">Enigmes</a></li>
-            <li><a href="/Enigmes/">DevinettesDesJoueurs</a></li>
-            </center>
-            
-       </ul>
-
-       {% endblock %}
-
-   </nav>
-
-   <section id="content">
-
-       {% block content %}{% endblock %}
-
-   </section>
-
-<footer>&copy; Enigma </footer>
-
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Django-RPG</title>
+        
+    </head>
+	<body>
+		{% block form %}
+		{% endblock %}
+	</body>
 </html>
