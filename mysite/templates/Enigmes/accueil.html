@@ -16,7 +16,7 @@
     					{% if user.is_authenticated %}
                             Vous êtes connecté, {{ user.username }}
                             <br/>
-                            Votre Niveau : {{user.level}}
+                            Votre Niveau : {{user.joueur.level}}
                             <br/>
                             <a href="/deconnexion"> Déconnexion</a>
 
