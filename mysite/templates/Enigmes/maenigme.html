@@ -12,6 +12,7 @@
 				{{ form.as_p }}
 				{% csrf_token %}
 					<fieldset>
+						<legend>  Votre Niveau : {{user.level}}</legend>
 						<legend>  Devinette n° {{question.numero}}</legend>
 						<h2> {{ question.question }} </h2>
 						<label for="pseudo">Votre réponse :</label>
