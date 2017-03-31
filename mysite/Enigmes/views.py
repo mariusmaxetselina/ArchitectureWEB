@@ -12,7 +12,7 @@ from django.shortcuts import render
 from .forms import RegisterForm
 from .forms import LoginForm
 from django.template import RequestContext
-from .models import Enigmes
+from .models import Enigmes,Joueur
 
 def index(request):
     return render(request, 'Enigmes/accueil.html',locals())
@@ -63,6 +63,11 @@ def inscription(request):
                 user = User.objects.get(username=username_u)
             except User.DoesNotExist:
                 user = User.objects.create_user(username=request.POST.get('username'), password=request.POST['password'],email=request.POST['email'])
+                joueur = Joueur()
+                joueur.level=0
+                joueur.master=False
+                joueur.user=user
+                joueur.save()
                 user.save()
                 user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
                 login(request, user)
