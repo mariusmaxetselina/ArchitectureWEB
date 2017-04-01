@@ -44,3 +44,4 @@ Alexandre s'est occupé des liens entre la base User et Enigmes, puis la gestion
 	* seulement quelques comptes utilisateurs ont été créés
 	* seulement quelques enigmes ont été rentrées dans la base de données
 	* lors de l'inscription l'utilisateur est connecté avec pour level 1
+	* pour acceder aux devinette il faut etre connecté, pour le moment onle faire qu'en tant qu'admin alors il faut se connecté sur http://127.0.0.1:8000/admin/ ndc : admin mdp : azertyuiop
