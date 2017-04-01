@@ -85,4 +85,14 @@ def inscription(request):
 
 
 def jouer(request):
+    return render(request, 'Enigmes/enigmes.html')
+
+
+def devinettejoueur(request):
     return render(request, 'Enigmes/vide.html')
+
+
+
+
+
+
