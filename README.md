@@ -31,9 +31,16 @@ Il est conseillé pour une bonne utilisation du site de mettre la commande exact
 
 Site en cours de développement.
 
+### Ce qui a été réalisé depuis dernier cours
+
+Elliot et Alexandre ont géré l'inscription.
+Elliot s'est occupé de la connexion et ????.
+Alexandre s'est occupé des liens entre la base User et Enigmes, puis la gestion de ce qui est affiché selon condition de si  l'on est co ou non.
+
 ### Quelques remarques
 
 * Base de données
 	* des comptes admin ont été créés
-	* seulement X comptes utilisateurs ont été créés
+	* seulement quelques comptes utilisateurs ont été créés
 	* seulement quelques enigmes ont été rentrées dans la base de données
+	* lors de l'inscription l'utilisateur est connecté avec pour level 1

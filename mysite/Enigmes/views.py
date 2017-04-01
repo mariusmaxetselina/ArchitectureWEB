@@ -64,7 +64,7 @@ def inscription(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(username=request.POST.get('username'), password=request.POST['password'],email=request.POST['email'])
                 joueur = Joueur()
-                joueur.level=0
+                joueur.level=1
                 joueur.master=False
                 joueur.user=user
                 joueur.save()
