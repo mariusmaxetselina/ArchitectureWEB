@@ -52,11 +52,11 @@ def connexion(request):
 
 
 def deconnexion(request):
-    if request.method == 'POST':
-        logout(request.user)
+#    if request.method == 'POST':
+        logout(request)
         return redirect(index)
-    else:
-        return redirect(connexion)
+#    else:
+#       return redirect(connexion)
 
 
 def erreur(request,name):

@@ -44,7 +44,5 @@ Alexandre s'est occupé des liens entre la base User et Enigmes notamment dans l
 	* seulement quelques comptes utilisateurs ont été créés
 	* seulement 10 enigmes ont été rentrées dans la base de données
 	* lors de l'inscription l'utilisateur est connecté avec pour level 1
-	* pour acceder aux devinette il faut etre connecté, pour le moment le moyen le plus simple est de ce connecter en tant qu'admin. Pour cela il faut se connecter sur http://127.0.0.1:8000/admin/ ndc : admin mdp : azertyuiop
-	Une fois connecté en admin, il faut aller sur http://127.0.0.1:8000/devinette/1  (acuellement on peut aller jusqu'a 10)
-	* la connexion fonctionne donc une fois connecté il suffit d'aller sur http://127.0.0.1:8000/devinette/1  (acuellement on peut aller jusqu'a 10)
+	* pour acceder aux devinette il faut etre connecté puis aller sur http://127.0.0.1:8000/devinette/1  (actuellement on peut aller jusqu'a 10)
 
