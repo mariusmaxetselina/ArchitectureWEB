@@ -30,23 +30,29 @@ def list_enigmes(request, titreQ):
 
 def connexion(request):
     if request.method == 'POST':
-        formLogin = LoginForm(request.POST)
-        if formLogin.is_valid():
-            user = authenticate(username=request.POST('username'), password=request.POST('password'))
-            if user is not None:
-                login(request, user)
-                return redirect(deconnexion)
-            else:
-                return redirect(index)
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username_u=request.POST.get('username')
+            password_p=request.POST.get('password')
+        user = authenticate(username=username_u,password=password_p)
+        if user is not None:
+            login(request, user)
+            #return HttpResponse("Vous existez petit bigorneau!")
+            return redirect(index)
+        else:
+            return HttpResponse("utilisateur inconnu")
     else:
-        formLogin = LoginForm()
-    formRegister = RegisterForm()
-    return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'formLogin': formLogin})
+        #user = authenticate(username='test', password='moi')
+        #login(request, user)
+        #return redirect(index)
+        form = LoginForm()
+        formRegister = RegisterForm()
+        return render(request, 'Enigmes/connexion.html', {'formRegister': formRegister, 'form': form})
 
 
 def deconnexion(request):
     if request.method == 'POST':
-        logout(request.POST)
+        logout(request.user)
         return redirect(index)
     else:
         return redirect(connexion)
@@ -93,7 +99,9 @@ def jouer(request):
 def devinettejoueur(request):
     return render(request, 'Enigmes/vide.html')
 
-
+def test(request):
+    form = RegisterForm()
+    return render(request, 'Enigmes/inscription.html', {'form': form})
 
 
 

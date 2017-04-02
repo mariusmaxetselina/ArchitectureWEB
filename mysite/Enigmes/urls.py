@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^inscription', views.inscription, name='inscription'),
     url(r'^devinette/(?P<titreQ>[0-9]+)/$', views.list_enigmes),
     url(r'^deconnexion', views.deconnexion),
+    url(r'^test', views.test,name='inscription'),
 ]
 """pour articleS, ici c'est la création de variables et leur nombre de
  digit qui est important"""
