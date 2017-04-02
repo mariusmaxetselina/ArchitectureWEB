@@ -48,5 +48,5 @@ Marius a réalisé un jeu en python qui se trouve dans Enigma/mysite/JeuPython.
 	* seulement quelques comptes utilisateurs ont été créés
 	* seulement 10 enigmes ont été rentrées dans la base de données
 	* lors de l'inscription l'utilisateur est connecté avec pour level 1
-	* pour acceder aux devinette il faut etre connecté puis aller sur http://127.0.0.1:8000/devinette/1  (actuellement on peut aller jusqu'a 10)
+	* pour acceder aux devinettes il faut etre connecté puis aller sur http://127.0.0.1:8000/devinette/1  (actuellement on peut aller jusqu'a 10) OU dans l'onglet enigme cliquer sur le lien "lien Enigmes"
 
