@@ -34,14 +34,15 @@ Site en cours de développement.
 ### Ce qui a été réalisé depuis dernier cours
 
 Elliot et Alexandre ont géré l'inscription.
-Elliot s'est occupé de la connexion et ????.
-Alexandre s'est occupé des liens entre la base User et Enigmes, puis la gestion de ce qui est affiché selon condition de si  l'on est co ou non.
+Elliot s'est occupé de la connexion.
+Alexandre s'est occupé des liens entre la base User et Enigmes notamment dans l'inscription, puis la gestion de ce qui est affiché selon condition de si l'on est co ou non.
 
 ### Quelques remarques
 
 * Base de données
 	* des comptes admin ont été créés
 	* seulement quelques comptes utilisateurs ont été créés
-	* seulement quelques enigmes ont été rentrées dans la base de données
+	* seulement 10 enigmes ont été rentrées dans la base de données
 	* lors de l'inscription l'utilisateur est connecté avec pour level 1
-	* pour acceder aux devinette il faut etre connecté, pour le moment onle faire qu'en tant qu'admin alors il faut se connecté sur http://127.0.0.1:8000/admin/ ndc : admin mdp : azertyuiop
+	* pour acceder aux devinette il faut etre connecté, pour le moment le moyen le plus simple est de ce connecter en tant qu'admin. Pour cela il faut se connecter sur http://127.0.0.1:8000/admin/ ndc : admin mdp : azertyuiop
+	Une fois connecté en admin, il faut aller sur http://127.0.0.1:8000/devinette/1  (acuellement on peut aller jusqu'a 10)

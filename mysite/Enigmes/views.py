@@ -23,8 +23,10 @@ def list_enigmes(request, titreQ):
         rock = Enigmes.objects.get(numero=titreQ)
     except Enigmes.DoesNotExist:
         raise Http404("Globiboulga")
-    return render(request, 'Enigmes/enigmes.html', {'question': rock}) #'Enigmes/maenigme.html pour tester sans etre connecte 
-    #Il faut se connecte sur http://127.0.0.1:8000/admin/ 
+    return render(request, 'Enigmes/enigmes.html', {'question': rock})  
+    #return render(request, 'Enigmes/maenigme.html', {'question': rock})  #pour tester sans etre connecte
+    #Il faut se connecter sur http://127.0.0.1:8000/admin/ 
+    # Aller sur http://127.0.0.1:8000/devinette/X avec X le numero de l'enigme
 
 def connexion(request):
     if request.method == 'POST':
