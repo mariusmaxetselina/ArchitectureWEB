@@ -31,11 +31,15 @@ Il est conseillé pour une bonne utilisation du site de mettre la commande exact
 
 Site en cours de développement.
 
-### Ce qui a été réalisé depuis dernier cours
+### Partage des taches au sein du groupe
 
-Elliot et Alexandre ont géré l'inscription.
+Elliot et Alexandre ont réalisé le site. Tout ce qui est du css, création de la base de données et l'inscription ont été réalisés par ces derniers.
+
 Elliot s'est occupé de la connexion et la déconnexion.
+
 Alexandre s'est occupé des liens entre la base User et Enigmes notamment dans l'inscription, puis la gestion de ce qui est affiché selon condition de si l'on est co ou non.
+
+Marius a réalisé un jeu en python qui se trouve dans Enigma/mysite/JeuPython.
 
 ### Quelques remarques
 
