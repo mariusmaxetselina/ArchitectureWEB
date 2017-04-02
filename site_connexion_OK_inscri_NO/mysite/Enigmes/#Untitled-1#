@@ -1,0 +1,12 @@
+       <ul>
+       		<center>
+            <li><a href="/Accueil">Accueil</a></li>
+            <li><a href="/inscription">Inscription</a></li>
+            <li><a href="/Enigmes/">Enigmes</a></li>
+            <li><a href="/devinettej/">DevinettesDesertzergtrg'(tgJoueurs</a></li>
+            <li><a href="/deconnexion">Déconnexion</a></li>
+            <li><a href="/connexion">Connexion</a></li>
+                       
+            </center>
+            
+       </ul>

@@ -1,0 +1,37 @@
+{% extends "Base.html" %}
+
+{% block title %}je suis la date{% endblock %}
+
+{% block content %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static '../../static/style.css' %}" />
+        <title>Enigmes - Inscription</title>
+    </head>
+    <div id="header"></div> 
+    <header>
+    </header>
+    <body>
+        <center>
+
+        <legend> S'inscrire </legend>
+        	<form action="{% url "inscription" %}" method="post">
+        		{% csrf_token %}
+        		{{ form.as_p }}
+        		<br/>
+        		<br/>
+        		<br/>
+        		<input type="submit" value="M'inscrire" />
+        	</form>
+              
+        <center>
+    </body>
+</html>
+
+{% endblock %}

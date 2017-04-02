@@ -1,0 +1,44 @@
+{% extends "Base.html" %}
+
+{% block title %}je suis vide{% endblock %}
+
+{% block content %}
+
+     <body>
+    	<center>
+			<section >
+				<form  class="connexion" method="post"  >
+				{{ form.as_p }}
+				{% csrf_token %}
+					<fieldset>
+					{% if user.is_authenticated %}
+						<p>  Votre Niveau : {{user.joueur.level}}</p>
+						<legend>  Devinette n° {{question.numero}}</legend>
+						<h2> {{ question.question }} </h2>
+						<label for="reponse">Votre réponse :</label>
+                    	<input type="text" name="reponse" autofocus required/> 
+                        <br/>
+                        <br/>
+                        <div class="centrage">
+                            <input class="buttonInscription" type="submit" name="Valider" value="Valider"/>
+                        </div>
+                        <a href="/deconnexion"> Déconnexion</a>
+                    {%else%}
+        				<center> <h2> Vous n'avez rien à faire ici ou c'est vide, revenez plus tard!</h2>
+        				<a href="/connexion">Connexion</a>
+     				{%endif%}                     
+                </fieldset>
+					</fieldset>
+				</section>   
+				</form>
+			</section>
+		<center>
+    </body>
+
+    	
+
+
+    
+
+{% endblock %}
+
