@@ -34,7 +34,7 @@ Site en cours de développement.
 ### Ce qui a été réalisé depuis dernier cours
 
 Elliot et Alexandre ont géré l'inscription.
-Elliot s'est occupé de la connexion.
+Elliot s'est occupé de la connexion et la déconnexion.
 Alexandre s'est occupé des liens entre la base User et Enigmes notamment dans l'inscription, puis la gestion de ce qui est affiché selon condition de si l'on est co ou non.
 
 ### Quelques remarques
